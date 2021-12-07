@@ -1,6 +1,18 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
-  "compilerOptions": {
-    "noImplicitAny": false
-  }
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "references": [
+    {
+      "path": "apps/day1"
+    },
+    {
+      "path": "apps/day2"
+    },
+    {
+      "path": "apps/day3"
+    },
+    {
+      "path": "apps/day4"
+    }
+  ]
 }
