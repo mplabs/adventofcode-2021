@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs'
-import { bitOr, column, dotMultiply, Matrix, matrix, row, size, sum, zeros } from 'mathjs'
+import { bitOr, column, dotMultiply, Matrix, matrix, row, sum, zeros } from 'mathjs'
 
 const input = readFileSync(`${__dirname}/input.txt`, 'utf-8')
 
@@ -34,11 +34,23 @@ interface Game {
       <Matrix>bitOr(draws[i], draw(board, number))
     )
 
-    const index = draws.findIndex(checkBingo)
-    const done = draws.every(checkBingo)
-    if (done) {
-      console.log(`Part 2: The final score is: ${getSum(boards[index], draws[index], number)}`)
-      break
+    for (let i = 0; i < draws.length; i++) {
+      const draw = draws[i]
+
+      // Skip boards that already won
+      if (winners.indexOf(i) !== -1) {
+        continue
+      }
+
+      // board has won
+      if (checkBingo(draw)) {
+        winners.push(i)
+      }
+
+      // We are done
+      if (winners.length >= boards.length) {
+        console.log(`Part 2: The final score is: ${getSum(boards[winners[winners.length - 1]], draws[winners[winners.length - 1]], number)}`)
+      }
     }
   }
 })()
