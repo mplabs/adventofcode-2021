@@ -8,7 +8,8 @@
   "scripts": {
     "ts:build": "tsc --build",
     "ts:clean": "tsc --build --clean",
-    "postinstall": "update-ts-references"
+    "postinstall": "update-ts-references",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
