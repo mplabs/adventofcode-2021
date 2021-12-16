@@ -6,6 +6,15 @@
       "path": "apps/day1"
     },
     {
+      "path": "apps/day10"
+    },
+    {
+      "path": "apps/day11"
+    },
+    {
+      "path": "apps/day12"
+    },
+    {
       "path": "apps/day2"
     },
     {
@@ -25,6 +34,9 @@
     },
     {
       "path": "apps/day8"
+    },
+    {
+      "path": "apps/day9"
     }
   ]
 }
