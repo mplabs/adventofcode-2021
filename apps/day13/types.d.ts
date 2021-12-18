@@ -1,1 +1,0 @@
-type coordinate = [number, number]
