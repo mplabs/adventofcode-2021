@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs'
+import { sum } from '@aoc/utils'
 
 // const input = `
 // 2199943210
@@ -12,8 +13,6 @@ const input = readFileSync(`${__dirname}/input.txt`, 'utf-8')
 const heightmap: number[][] = input
   .split(/\r?\n/)
   .map((line) => line.split('').map((n) => +n))
-
-const sum = (...args) => args.reduce((p, c) => p + c, 0)
 
 const minima = []
 for (let x = 0, bounds = getBounds(); x <= bounds[0]; x++) {

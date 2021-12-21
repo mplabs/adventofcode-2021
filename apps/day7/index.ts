@@ -1,13 +1,12 @@
 import { readFileSync } from 'fs'
+import { max, min, sum } from '@aoc/utils'
 
 // const input = [16,1,2,0,4,2,7,1,2,14]
 const input = readFileSync(`${__dirname}/input.txt`, 'utf-8')
   .split(',')
   .map((n) => Number(n))
 
-const min = (...args) => args.reduce((p, c) => (c < p ? c : p), Infinity)
-const max = (...args) => args.reduce((p, c) => (c > p ? c : p), 0)
-const sum = (...args) => args.reduce((p, c) => p + c, 0)
+
 
 // # of positions
 const posCount = max(...input)

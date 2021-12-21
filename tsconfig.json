@@ -24,6 +24,9 @@
       "path": "apps/day2"
     },
     {
+      "path": "apps/day21"
+    },
+    {
       "path": "apps/day3"
     },
     {
@@ -43,6 +46,9 @@
     },
     {
       "path": "apps/day9"
+    },
+    {
+      "path": "shared/utils"
     }
   ]
 }

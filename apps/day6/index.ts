@@ -1,10 +1,10 @@
-import { readFileSync } from "fs"
-
+import { readFileSync } from 'fs'
+import { sum } from '@aoc/utils'
 
 ;(function part1() {
-  const input = [3,4,3,1,2]
+  const input = [3, 4, 3, 1, 2]
   // const input = readFileSync(`${__dirname}/input.txt`, 'utf-8').split(',').map(n => Number(n))
-  
+
   let state: number[]
 
   console.log(`Initial State:`, input.length)
@@ -23,22 +23,20 @@ import { readFileSync } from "fs"
         --state[i]
       }
     }
-  
+
     return state
   }
-}())
-
+})()
 ;(function part2() {
   // const input = [3,4,3,1,2]
-  const input = readFileSync(`${__dirname}/input.txt`, 'utf-8').split(',').map(n => Number(n))
+  const input = readFileSync(`${__dirname}/input.txt`, 'utf-8')
+    .split(',')
+    .map((n) => Number(n))
 
   const state: number[] = new Array(9).fill(0)
 
   // Fill with initial fish timers
-  input.forEach(fish => state[fish]++)
-
-  // Get the sum of all elements
-  const sum = (...nums) => nums.reduce((p, c) => p + c, 0)
+  input.forEach((fish) => state[fish]++)
 
   console.log(`Initial State:`, sum(...state))
   for (let i = 0; i < 256; i++) {
@@ -47,4 +45,4 @@ import { readFileSync } from "fs"
     state[6] += spawn
   }
   console.log(`Part 2: After 256 days:`, sum(...state))
-}())
+})()
